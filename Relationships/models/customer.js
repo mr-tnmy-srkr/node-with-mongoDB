@@ -34,7 +34,7 @@ const addCustomer = async () => {
   console.log(result);
 };
 
-addCustomer();
+// addCustomer();
 
 /* const addOrders = async () => {
   let res = await Order.insertMany([
@@ -46,3 +46,10 @@ addCustomer();
 }; */
 
 // addOrders();
+
+//populate concept
+const findCustomer = async () => {
+  let result = await Customer.find({}).populate("orders");
+  console.log(result[0]);
+};
+findCustomer();
